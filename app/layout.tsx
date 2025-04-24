@@ -4,7 +4,8 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
 import LayoutWithSidebar from "./Component/LayoutWithSidebar";
-
+import { Box } from "@mui/material";
+import Nav from "./Component/nav";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -28,8 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable}`}>
+      <body className={`${inter.variable} ${poppins.variable}`  }>
         <ReduxProvider>
+        
           <LayoutWithSidebar>{children}</LayoutWithSidebar>
           </ReduxProvider>
       </body>

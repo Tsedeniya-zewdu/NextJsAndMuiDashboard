@@ -6,8 +6,10 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 export default function Home() {
   return (
-    <Box style={{display:"flex", width:"200",height:"500px",position:'relative',marginTop:'100px'}}>
+    <Box style={{display:"flex", width:"200",height:"auto"}}>
       
+    
+   
     <Box
       sx={{
         display: "flex",
@@ -20,9 +22,10 @@ export default function Home() {
       }}
     >
       {Array.from({ length: 6 }).map((_, index) => (
-        <Paper key={index} elevation={index % 4}><Typography variant="h3"> Hello</Typography></Paper> 
+        <Paper key={index} elevation={index % 4}><Typography variant="h3"> </Typography></Paper> 
       ))}
     </Box>
+   
     </Box>
   );
 }

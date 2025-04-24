@@ -54,7 +54,7 @@ export default function SideBar() {
   };
 
   const drawer = (
-    <Box sx={{ padding: collapsed ? "0 10px" : "0 20px" }}>
+    <Box sx={{ padding: collapsed ? "0 10px" : "0 20px",display:'block' }}>
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: 'center' }}>
       <Box
   sx={{
@@ -112,6 +112,7 @@ export default function SideBar() {
       open={isMdUp ? true : mobileOpen} 
       onClose={handleDrawerToggle} 
       sx={{
+        width: drawerWidth,
         display: "block",
         "& .MuiDrawer-paper": {
           width: drawerWidth,

@@ -8,29 +8,45 @@ import {  useSelector } from "react-redux";
 
 export default function LayoutWithSidebar({ children }: { children: React.ReactNode }) {
   const collapsed = useSelector((state: { sidebar: { collapsed: boolean } }) => state.sidebar.collapsed);
-  const drawerWidth = collapsed ? 80 : 260;
+ 
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <SideBar />
-      <Box sx={{ flexGrow: 1 }}>
-        <Nav />
-        <Box
-  component="main"
-  sx={{
-    px: 3,
-    pt: 8,
-    ml: {
-      xs: '10px', 
-    },
-    [`@media (min-width:1200px)`]: {
-      ml: `${drawerWidth}px`,
-    },
-  }}
->
-          {children}
-        </Box>
+    
+    <Box sx={{ display: "flex", gap: '22px', minHeight: '100vh' , height:'auto'}}>
+    <SideBar />
+  
+    <Box
+      sx={{display:'flex',
+        flexGrow: 1,
+        backgroundColor: '#f5f7fa',
+        minHeight: '100vh', 
+        height:'auto',
+        position:'relative',
+        flexDirection:'column',
+        gap:'10px'
+      }}
+    >
+      <Box sx={{position:'sticky',
+        top:'0'
+      }}>
+      <Nav />
+      </Box>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1, 
+          px: 0,
+          pt: 0,
+          width: '100%',
+          height:'auto'
+        }}
+      >
+        {children}
       </Box>
     </Box>
-  );
+  </Box>
+  
+    );
+    
+  
 }
