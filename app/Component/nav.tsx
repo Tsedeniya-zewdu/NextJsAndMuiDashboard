@@ -84,7 +84,7 @@ export default function Nav() {
         boxShadow: "none",
         display: 'flex',
         justifyContent: 'center', 
-        
+        zIndex:'1300'
       }}
     >
       <Toolbar

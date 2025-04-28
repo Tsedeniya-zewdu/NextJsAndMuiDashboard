@@ -23,7 +23,7 @@ export default function LayoutWithSidebar({ children }: { children: React.ReactN
         height:'auto',
         position:'relative',
         flexDirection:'column',
-        gap:'10px'
+        gap:'40px'
       }}
     >
       <Box sx={{position:'sticky',
